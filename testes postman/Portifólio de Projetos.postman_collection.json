@@ -1,0 +1,487 @@
+{
+	"info": {
+		"_postman_id": "04491b02-fa9b-4080-ad43-99a5770351b6",
+		"name": "Portifólio de Projetos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pessoa",
+			"item": [
+				{
+					"name": "Insert funcionario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\":\"Rony\",\n\t\"dataNascimento\":\"1983-09-21T00:00:00.000-03:00\",\n\t\"cpf\":\"007.634.199-23\",\n\t\"funcionario\":\"true\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8090/portifolio/pessoa/",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"portifolio",
+								"pessoa",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert nao funcionario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\":\"Natália\",\n\t\"dataNascimento\":\"1985-09-15T00:00:00.000-03:00\",\n\t\"cpf\":\"046.485.209-98\",\n\t\"funcionario\":\"false\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8090/portifolio/pessoa/",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"portifolio",
+								"pessoa",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert nao funcionario 3",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\":\"Rony\",\n\t\"dataNascimento\":\"1983-09-21T00:00:00.000-03:00\",\n\t\"cpf\":\"007.634.199-23\",\n\t\"funcionario\":\"true\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8090/portifolio/pessoa/",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"portifolio",
+								"pessoa",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByNome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/portifolio/pessoa/?nome=Rony",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"portifolio",
+								"pessoa",
+								""
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Rony"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/portifolio/pessoa/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"portifolio",
+								"pessoa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById invalid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/portifolio/pessoa/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"portifolio",
+								"pessoa",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/portifolio/pessoa/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"portifolio",
+								"pessoa",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 2,\n\t\"nome\":\"Natália Fortunato\",\n\t\"dataNascimento\":\"2020-02-04T00:00:00.000-03:00\",\n\t\"cpf\":\"007.634.199-23\",\n\t\"funcionario\":\"true\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8090/portifolio/pessoa/",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"portifolio",
+								"pessoa",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Projeto",
+			"item": [
+				{
+					"name": "Insert",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Projeto 3\",\r\n    \"dataInicio\": \"2020-02-21T03:00:00.000+0000\",\r\n    \"dataPrevisaoFim\": \"2020-02-28T03:00:00.000+0000\",\r\n    \"descricao\": \"desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1\",\r\n    \"status\": \"INICIADO\",\r\n    \"orcamento\": 1.11,\r\n    \"risco\": \"ALTO\",\r\n    \"gerente\": {\r\n        \"id\": 2\r\n    },\r\n    \"membros\": [\r\n        {\r\n            \"id\": 1\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8090/portifolio/projeto/",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"portifolio",
+								"projeto",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Projeto Cancelado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Projeto 3\",\r\n    \"dataInicio\": \"2020-02-21T03:00:00.000+0000\",\r\n    \"dataPrevisaoFim\": \"2020-02-28T03:00:00.000+0000\",\r\n    \"descricao\": \"desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1\",\r\n    \"status\": \"CANCELADO\",\r\n    \"orcamento\": 100000.11,\r\n    \"risco\": \"BAIXO\",\r\n    \"gerente\": {\r\n        \"id\": 2\r\n    },\r\n    \"membros\": [\r\n        {\r\n            \"id\": 1\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8090/portifolio/projeto/",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"portifolio",
+								"projeto",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar - PROJETO ENCERRADO",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"id\": 1,\r\n    \"nome\": \"Projeto alterado\",\r\n    \"dataInicio\": \"2020-02-21T03:00:00.000+0000\",\r\n    \"dataPrevisaoFim\": \"2020-02-28T03:00:00.000+0000\",\r\n    \"dataFim\": \"2020-02-29T03:00:00.000+0000\",\r\n    \"descricao\": \"desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1desc 1\",\r\n    \"status\": \"ENCERRADO\",\r\n    \"orcamento\": 1.11,\r\n    \"risco\": \"ALTO\",\r\n    \"gerente\": {\r\n        \"id\": 2\r\n    },\r\n    \"membros\": [\r\n        {\r\n            \"id\": 1\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8090/portifolio/pessoa/",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"portifolio",
+								"pessoa",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByNome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/portifolio/pessoa/?nome=Rony",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"portifolio",
+								"pessoa",
+								""
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Rony"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/portifolio/pessoa/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"portifolio",
+								"pessoa",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById invalid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/portifolio/pessoa/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"portifolio",
+								"pessoa",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Erro exclusao",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/portifolio/pessoa/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"portifolio",
+								"pessoa",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "exclusao com sucesso - proj cancelado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/portifolio/projeto/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"portifolio",
+								"projeto",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
